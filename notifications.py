@@ -1,5 +1,3 @@
-# notifications.py
-
 import os
 import logging
 import ssl
@@ -98,3 +96,41 @@ def send_via_api(subject, body, recipient_email, is_html):
             logging.error(f"Failed to send email via API: {response.text}")
     except requests.RequestException as e:
         logging.error(f"API request failed: {e}")
+
+# Send migration summary
+def send_migration_summary(failed_tables, email_notify, recipient_email):
+    """
+    Sends a summary email after migration, detailing success or failure of tables.
+
+    :param failed_tables: List of tables that failed migration.
+    :param email_notify: Boolean, whether to send email notifications.
+    :param recipient_email: Email address for notifications.
+    """
+    subject = "Database Migration Summary"
+    if failed_tables:
+        body = "Migration completed with errors. The following tables failed to migrate:\n" + "\n".join(failed_tables)
+        logging.error("Some tables failed to migrate. Summary email sent with details.")
+    else:
+        body = "Migration completed successfully for all tables."
+        logging.info("Migration completed successfully. Summary email sent with details.")
+
+    if email_notify and recipient_email:
+        send_email_notification(subject, body, recipient_email, email_notify=email_notify)
+
+# Send targeted error notification
+def send_error_notification(error_type, table_name, recipient_email, details=None):
+    """
+    Sends a targeted email notification about a specific migration error.
+
+    :param error_type: Type of error encountered.
+    :param table_name: Table related to the error.
+    :param recipient_email: Email address to receive the error notification.
+    :param details: Additional details about the error.
+    """
+    subject = f"Migration Error: {error_type} in {table_name}"
+    body = f"An error of type '{error_type}' occurred during migration of table '{table_name}'."
+    if details:
+        body += f"\n\nDetails:\n{details}"
+    
+    logging.warning(f"Sending error notification for {error_type} in table '{table_name}'")
+    send_email_notification(subject, body, recipient_email, email_notify=True)

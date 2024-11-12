@@ -6,8 +6,9 @@ import re
 import time
 from psycopg2 import sql
 from user_interaction import prompt_user_for_fix
-from database_connections import add_column_to_postgresql, create_postgresql_table
 from migration_operations import merge_and_update_data
+from user_interaction import prompt_user_for_fix
+from database_connections import add_column_to_postgresql, create_postgresql_table
 
 # Custom error handling function for dynamic error resolution
 def resolve_error_based_on_choice(mysql_conn, pg_conn, table_name, schema_name, error_message, error_type, table_options):

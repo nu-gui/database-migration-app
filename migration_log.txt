@@ -1,0 +1,877 @@
+2024-11-12 08:28:01,003:INFO:Logging has been configured successfully.
+2024-11-12 08:28:01,003:INFO:Starting migration process.
+2024-11-12 08:28:01,004:INFO:Database configurations loaded successfully.
+2024-11-12 08:28:01,004:INFO:Email configuration loaded successfully.
+2024-11-12 08:28:45,458:INFO:Connecting to MySQL (Attempt 1)...
+2024-11-12 08:28:45,895:INFO:MySQL connection established.
+2024-11-12 08:30:05,322:INFO:MySQL connection closed.
+2024-11-12 08:30:05,323:INFO:Connecting to PostgreSQL (Attempt 1)...
+2024-11-12 08:30:05,350:INFO:PostgreSQL connection established.
+2024-11-12 08:30:05,350:INFO:Using schema 'public' for PostgreSQL migrations.
+2024-11-12 08:30:05,351:INFO:PostgreSQL connection closed.
+2024-11-12 08:30:05,351:INFO:Starting multi-threaded migration.
+2024-11-12 08:30:05,352:INFO:Connecting to MySQL (Attempt 1)...
+2024-11-12 08:30:05,353:INFO:Connecting to MySQL (Attempt 1)...
+2024-11-12 08:30:05,353:INFO:Connecting to MySQL (Attempt 1)...
+2024-11-12 08:30:05,353:INFO:Connecting to MySQL (Attempt 1)...
+2024-11-12 08:30:05,354:INFO:Connecting to MySQL (Attempt 1)...
+2024-11-12 08:30:05,354:INFO:Connecting to MySQL (Attempt 1)...
+2024-11-12 08:30:05,354:INFO:Connecting to MySQL (Attempt 1)...
+2024-11-12 08:30:05,355:INFO:Connecting to MySQL (Attempt 1)...
+2024-11-12 08:30:05,355:INFO:Connecting to MySQL (Attempt 1)...
+2024-11-12 08:30:05,355:INFO:Connecting to MySQL (Attempt 1)...
+2024-11-12 08:30:06,077:INFO:MySQL connection established.
+2024-11-12 08:30:06,240:INFO:MySQL connection established.
+2024-11-12 08:30:06,343:INFO:MySQL connection established.
+2024-11-12 08:30:06,384:INFO:MySQL connection established.
+2024-11-12 08:30:06,431:INFO:MySQL connection established.
+2024-11-12 08:30:06,431:INFO:MySQL connection established.
+2024-11-12 08:30:06,554:INFO:MySQL connection established.
+2024-11-12 08:30:06,554:INFO:MySQL connection established.
+2024-11-12 08:30:06,554:INFO:MySQL connection established.
+2024-11-12 08:30:06,554:INFO:MySQL connection established.
+2024-11-12 08:30:06,554:INFO:Connecting to PostgreSQL (Attempt 1)...
+2024-11-12 08:30:06,555:INFO:Connecting to PostgreSQL (Attempt 1)...
+2024-11-12 08:30:06,555:INFO:Connecting to PostgreSQL (Attempt 1)...
+2024-11-12 08:30:06,555:INFO:Connecting to PostgreSQL (Attempt 1)...
+2024-11-12 08:30:06,556:INFO:Connecting to PostgreSQL (Attempt 1)...
+2024-11-12 08:30:06,556:INFO:Connecting to PostgreSQL (Attempt 1)...
+2024-11-12 08:30:06,556:INFO:Connecting to PostgreSQL (Attempt 1)...
+2024-11-12 08:30:06,556:INFO:Connecting to PostgreSQL (Attempt 1)...
+2024-11-12 08:30:06,556:INFO:Connecting to PostgreSQL (Attempt 1)...
+2024-11-12 08:30:06,557:INFO:Connecting to PostgreSQL (Attempt 1)...
+2024-11-12 08:30:06,584:INFO:PostgreSQL connection established.
+2024-11-12 08:30:06,625:INFO:PostgreSQL connection established.
+2024-11-12 08:30:06,625:INFO:PostgreSQL connection established.
+2024-11-12 08:30:06,625:INFO:PostgreSQL connection established.
+2024-11-12 08:30:06,626:INFO:PostgreSQL connection established.
+2024-11-12 08:30:06,626:INFO:PostgreSQL connection established.
+2024-11-12 08:30:06,626:INFO:PostgreSQL connection established.
+2024-11-12 08:30:06,626:INFO:PostgreSQL connection established.
+2024-11-12 08:30:06,626:INFO:PostgreSQL connection established.
+2024-11-12 08:30:06,626:INFO:PostgreSQL connection established.
+2024-11-12 08:30:06,849:INFO:No data found in MySQL table 'spammed_name_matched_report' to migrate.
+2024-11-12 08:30:06,891:ERROR:Failed to migrate data for table 'tbl_customercreditstatus' to PostgreSQL: syntax error at or near ")"
+LINE 3:                     ON CONFLICT () DO UPDATE SET CustomerId ...
+                                         ^
+
+2024-11-12 08:30:06,935:ERROR:Failed to migrate data for table 'tbl_authorization' to PostgreSQL: syntax error at or near ")"
+LINE 3:                     ON CONFLICT () DO UPDATE SET authid = EX...
+                                         ^
+
+2024-11-12 08:30:07,022:ERROR:Failed to migrate data for table 'tbl_customer_master_list' to PostgreSQL: syntax error at or near ")"
+LINE 3:                     ON CONFLICT () DO UPDATE SET ListId = EX...
+                                         ^
+
+2024-11-12 08:30:07,023:INFO:PostgreSQL connection closed.
+2024-11-12 08:30:07,024:ERROR:PostgreSQL connection attempt 1 failed: syntax error at or near ")"
+LINE 3:                     ON CONFLICT () DO UPDATE SET CustomerId ...
+                                         ^
+
+2024-11-12 08:30:07,024:ERROR:Failed to migrate data for table 'tbl_customercreditstatus_bak18may2023' to PostgreSQL: syntax error at or near ")"
+LINE 3:                     ON CONFLICT () DO UPDATE SET CustomerId ...
+                                         ^
+
+2024-11-12 08:30:07,027:ERROR:PostgreSQL connection attempt 1 failed: syntax error at or near ")"
+LINE 3:                     ON CONFLICT () DO UPDATE SET authid = EX...
+                                         ^
+
+2024-11-12 08:30:07,068:ERROR:Failed to migrate data for table 'tbl_customercreditrequests' to PostgreSQL: syntax error at or near ")"
+LINE 3:                     ON CONFLICT () DO UPDATE SET CreditReque...
+                                         ^
+
+2024-11-12 08:30:07,068:ERROR:PostgreSQL connection attempt 1 failed: syntax error at or near ")"
+LINE 3:                     ON CONFLICT () DO UPDATE SET ListId = EX...
+                                         ^
+
+2024-11-12 08:30:07,068:INFO:MySQL connection closed.
+2024-11-12 08:30:07,069:INFO:Backoff delay: 1.87 seconds on attempt 2
+2024-11-12 08:30:07,070:ERROR:PostgreSQL connection attempt 1 failed: syntax error at or near ")"
+LINE 3:                     ON CONFLICT () DO UPDATE SET CustomerId ...
+                                         ^
+
+2024-11-12 08:30:07,071:INFO:Backoff delay: 2.06 seconds on attempt 2
+2024-11-12 08:30:07,072:ERROR:Failed to migrate data for table 'tbl_clienttoken' to PostgreSQL: syntax error at or near ")"
+LINE 3:                     ON CONFLICT () DO UPDATE SET ID = EXCLUD...
+                                         ^
+
+2024-11-12 08:30:07,072:ERROR:PostgreSQL connection attempt 1 failed: syntax error at or near ")"
+LINE 3:                     ON CONFLICT () DO UPDATE SET CreditReque...
+                                         ^
+
+2024-11-12 08:30:07,073:INFO:Backoff delay: 1.98 seconds on attempt 2
+2024-11-12 08:30:07,073:INFO:Successfully migrated table 'spammed_name_matched_report'
+2024-11-12 08:30:07,075:INFO:Backoff delay: 1.77 seconds on attempt 2
+2024-11-12 08:30:07,076:ERROR:PostgreSQL connection attempt 1 failed: syntax error at or near ")"
+LINE 3:                     ON CONFLICT () DO UPDATE SET ID = EXCLUD...
+                                         ^
+
+2024-11-12 08:30:07,079:INFO:Backoff delay: 1.61 seconds on attempt 2
+2024-11-12 08:30:07,081:ERROR:Failed to migrate data for table 'tbl_customer_master_list1' to PostgreSQL: syntax error at or near ")"
+LINE 3:                     ON CONFLICT () DO UPDATE SET ListId = EX...
+                                         ^
+
+2024-11-12 08:30:07,082:INFO:Connecting to MySQL (Attempt 1)...
+2024-11-12 08:30:07,083:ERROR:Failed to migrate data for table 'tbl_customer_master_list_columnmapping' to PostgreSQL: syntax error at or near ")"
+LINE 3:                     ON CONFLICT () DO UPDATE SET ListId = EX...
+                                         ^
+
+2024-11-12 08:30:07,083:INFO:Backoff delay: 1.73 seconds on attempt 2
+2024-11-12 08:30:07,084:ERROR:PostgreSQL connection attempt 1 failed: syntax error at or near ")"
+LINE 3:                     ON CONFLICT () DO UPDATE SET ListId = EX...
+                                         ^
+
+2024-11-12 08:30:07,084:ERROR:PostgreSQL connection attempt 1 failed: syntax error at or near ")"
+LINE 3:                     ON CONFLICT () DO UPDATE SET ListId = EX...
+                                         ^
+
+2024-11-12 08:30:07,084:INFO:Backoff delay: 1.71 seconds on attempt 2
+2024-11-12 08:30:07,085:INFO:Backoff delay: 1.62 seconds on attempt 2
+2024-11-12 08:30:07,104:ERROR:Failed to migrate data for table 'spam_names' to PostgreSQL: syntax error at or near ")"
+LINE 3:                     ON CONFLICT () DO UPDATE SET id = EXCLUD...
+                                         ^
+
+2024-11-12 08:30:07,105:ERROR:PostgreSQL connection attempt 1 failed: syntax error at or near ")"
+LINE 3:                     ON CONFLICT () DO UPDATE SET id = EXCLUD...
+                                         ^
+
+2024-11-12 08:30:07,106:INFO:Backoff delay: 2.07 seconds on attempt 2
+2024-11-12 08:30:07,460:INFO:MySQL connection established.
+2024-11-12 08:30:07,460:INFO:Connecting to PostgreSQL (Attempt 1)...
+2024-11-12 08:30:07,493:INFO:PostgreSQL connection established.
+2024-11-12 08:30:08,697:INFO:PostgreSQL connection closed.
+2024-11-12 08:30:08,698:INFO:Connecting to PostgreSQL (Attempt 2)...
+2024-11-12 08:30:08,703:INFO:PostgreSQL connection closed.
+2024-11-12 08:30:08,703:INFO:Connecting to PostgreSQL (Attempt 2)...
+2024-11-12 08:30:08,720:INFO:PostgreSQL connection established.
+2024-11-12 08:30:08,721:INFO:PostgreSQL connection closed.
+2024-11-12 08:30:08,763:INFO:PostgreSQL connection established.
+2024-11-12 08:30:08,763:INFO:MySQL connection closed.
+2024-11-12 08:30:08,764:INFO:PostgreSQL connection closed.
+2024-11-12 08:30:08,764:ERROR:Migration failed for table 'tbl_customercreditrequests': generator didn't stop after throw()
+2024-11-12 08:30:08,807:INFO:PostgreSQL connection closed.
+2024-11-12 08:30:08,807:INFO:MySQL connection closed.
+2024-11-12 08:30:08,807:INFO:Connecting to MySQL (Attempt 1)...
+2024-11-12 08:30:08,808:INFO:Connecting to PostgreSQL (Attempt 2)...
+2024-11-12 08:30:08,809:ERROR:Migration failed for table 'tbl_customer_master_list_columnmapping': generator didn't stop after throw()
+2024-11-12 08:30:08,810:INFO:Connecting to MySQL (Attempt 1)...
+2024-11-12 08:30:08,820:INFO:PostgreSQL connection closed.
+2024-11-12 08:30:08,820:INFO:Connecting to PostgreSQL (Attempt 2)...
+2024-11-12 08:30:08,832:INFO:PostgreSQL connection established.
+2024-11-12 08:30:08,833:INFO:PostgreSQL connection closed.
+2024-11-12 08:30:08,881:INFO:PostgreSQL connection established.
+2024-11-12 08:30:08,881:INFO:MySQL connection closed.
+2024-11-12 08:30:08,881:INFO:PostgreSQL connection closed.
+2024-11-12 08:30:08,882:INFO:PostgreSQL connection closed.
+2024-11-12 08:30:08,882:ERROR:Migration failed for table 'tbl_customer_master_list1': generator didn't stop after throw()
+2024-11-12 08:30:08,883:INFO:Connecting to PostgreSQL (Attempt 2)...
+2024-11-12 08:30:08,925:INFO:MySQL connection closed.
+2024-11-12 08:30:08,926:INFO:Connecting to MySQL (Attempt 1)...
+2024-11-12 08:30:08,927:ERROR:Migration failed for table 'tbl_clienttoken': generator didn't stop after throw()
+2024-11-12 08:30:08,928:INFO:Connecting to MySQL (Attempt 1)...
+2024-11-12 08:30:08,943:INFO:PostgreSQL connection closed.
+2024-11-12 08:30:08,943:INFO:Connecting to PostgreSQL (Attempt 2)...
+2024-11-12 08:30:08,948:INFO:PostgreSQL connection established.
+2024-11-12 08:30:08,948:INFO:PostgreSQL connection closed.
+2024-11-12 08:30:08,989:INFO:PostgreSQL connection established.
+2024-11-12 08:30:08,989:INFO:MySQL connection closed.
+2024-11-12 08:30:08,990:INFO:PostgreSQL connection closed.
+2024-11-12 08:30:08,990:ERROR:Migration failed for table 'tbl_customercreditstatus_bak18may2023': generator didn't stop after throw()
+2024-11-12 08:30:09,031:INFO:MySQL connection closed.
+2024-11-12 08:30:09,031:INFO:Connecting to MySQL (Attempt 1)...
+2024-11-12 08:30:09,032:ERROR:Migration failed for table 'tbl_customercreditstatus': generator didn't stop after throw()
+2024-11-12 08:30:09,033:INFO:Connecting to MySQL (Attempt 1)...
+2024-11-12 08:30:09,056:INFO:PostgreSQL connection closed.
+2024-11-12 08:30:09,057:INFO:Connecting to PostgreSQL (Attempt 2)...
+2024-11-12 08:30:09,080:INFO:PostgreSQL connection established.
+2024-11-12 08:30:09,081:INFO:PostgreSQL connection closed.
+2024-11-12 08:30:09,204:INFO:PostgreSQL connection closed.
+2024-11-12 08:30:09,204:INFO:MySQL connection closed.
+2024-11-12 08:30:09,204:INFO:MySQL connection established.
+2024-11-12 08:30:09,204:INFO:PostgreSQL connection closed.
+2024-11-12 08:30:09,205:INFO:Connecting to PostgreSQL (Attempt 2)...
+2024-11-12 08:30:09,205:ERROR:Migration failed for table 'tbl_customer_master_list': generator didn't stop after throw()
+2024-11-12 08:30:09,206:INFO:Connecting to PostgreSQL (Attempt 1)...
+2024-11-12 08:30:09,206:INFO:Connecting to PostgreSQL (Attempt 2)...
+2024-11-12 08:30:09,251:INFO:PostgreSQL connection established.
+2024-11-12 08:30:09,508:INFO:MySQL connection established.
+2024-11-12 08:30:09,549:INFO:MySQL connection established.
+2024-11-12 08:30:09,550:INFO:Connecting to MySQL (Attempt 1)...
+2024-11-12 08:30:09,550:INFO:MySQL connection established.
+2024-11-12 08:30:09,550:INFO:MySQL connection established.
+2024-11-12 08:30:09,629:INFO:MySQL connection established.
+2024-11-12 08:30:09,631:INFO:PostgreSQL connection closed.
+2024-11-12 08:30:09,632:INFO:Connecting to PostgreSQL (Attempt 1)...
+2024-11-12 08:30:09,632:INFO:Connecting to PostgreSQL (Attempt 1)...
+2024-11-12 08:30:09,633:INFO:Connecting to PostgreSQL (Attempt 1)...
+2024-11-12 08:30:09,634:INFO:Connecting to PostgreSQL (Attempt 1)...
+2024-11-12 08:30:09,634:INFO:Connecting to PostgreSQL (Attempt 1)...
+2024-11-12 08:30:09,675:INFO:PostgreSQL connection established.
+2024-11-12 08:30:09,675:INFO:PostgreSQL connection established.
+2024-11-12 08:30:09,675:INFO:MySQL connection closed.
+2024-11-12 08:30:09,678:INFO:PostgreSQL connection closed.
+2024-11-12 08:30:09,719:INFO:PostgreSQL connection established.
+2024-11-12 08:30:09,719:INFO:PostgreSQL connection established.
+2024-11-12 08:30:09,719:INFO:PostgreSQL connection established.
+2024-11-12 08:30:09,719:INFO:PostgreSQL connection established.
+2024-11-12 08:30:09,720:INFO:PostgreSQL connection established.
+2024-11-12 08:30:09,720:ERROR:Migration failed for table 'tbl_authorization': generator didn't stop after throw()
+2024-11-12 08:30:09,771:INFO:MySQL connection closed.
+2024-11-12 08:30:09,819:ERROR:Failed to migrate data for table 'tbl_reportprocess_status' to PostgreSQL: syntax error at or near ")"
+LINE 3:                     ON CONFLICT () DO UPDATE SET StatusId = ...
+                                         ^
+
+2024-11-12 08:30:10,020:INFO:MySQL connection established.
+2024-11-12 08:30:10,066:INFO:Connecting to MySQL (Attempt 1)...
+2024-11-12 08:30:10,067:ERROR:Migration failed for table 'spam_names': generator didn't stop after throw()
+2024-11-12 08:30:10,068:ERROR:PostgreSQL connection attempt 1 failed: syntax error at or near ")"
+LINE 3:                     ON CONFLICT () DO UPDATE SET StatusId = ...
+                                         ^
+
+2024-11-12 08:30:10,068:INFO:Connecting to PostgreSQL (Attempt 1)...
+2024-11-12 08:30:10,071:INFO:Connecting to MySQL (Attempt 1)...
+2024-11-12 08:30:10,072:INFO:Backoff delay: 2.01 seconds on attempt 2
+2024-11-12 08:30:10,080:ERROR:Failed to migrate data for table 'tbl_reportstats' to PostgreSQL: syntax error at or near ")"
+LINE 3:                     ON CONFLICT () DO UPDATE SET ID = EXCLUD...
+                                         ^
+
+2024-11-12 08:30:10,082:ERROR:PostgreSQL connection attempt 1 failed: syntax error at or near ")"
+LINE 3:                     ON CONFLICT () DO UPDATE SET ID = EXCLUD...
+                                         ^
+
+2024-11-12 08:30:10,083:INFO:Backoff delay: 1.90 seconds on attempt 2
+2024-11-12 08:30:10,095:INFO:PostgreSQL connection established.
+2024-11-12 08:30:10,854:INFO:MySQL connection established.
+2024-11-12 08:30:10,854:INFO:MySQL connection established.
+2024-11-12 08:30:10,858:INFO:Connecting to PostgreSQL (Attempt 1)...
+2024-11-12 08:30:10,858:INFO:Connecting to PostgreSQL (Attempt 1)...
+2024-11-12 08:30:10,896:INFO:PostgreSQL connection established.
+2024-11-12 08:30:10,969:INFO:PostgreSQL connection established.
+2024-11-12 08:30:11,989:INFO:PostgreSQL connection closed.
+2024-11-12 08:30:11,993:INFO:Connecting to PostgreSQL (Attempt 2)...
+2024-11-12 08:30:12,023:INFO:PostgreSQL connection established.
+2024-11-12 08:30:12,027:INFO:PostgreSQL connection closed.
+2024-11-12 08:30:12,099:INFO:PostgreSQL connection closed.
+2024-11-12 08:30:12,100:INFO:MySQL connection closed.
+2024-11-12 08:30:12,101:INFO:Connecting to PostgreSQL (Attempt 2)...
+2024-11-12 08:30:12,105:ERROR:Migration failed for table 'tbl_reportstats': generator didn't stop after throw()
+2024-11-12 08:30:12,110:INFO:Connecting to MySQL (Attempt 1)...
+2024-11-12 08:30:12,132:INFO:PostgreSQL connection established.
+2024-11-12 08:30:12,134:INFO:PostgreSQL connection closed.
+2024-11-12 08:30:12,205:INFO:MySQL connection closed.
+2024-11-12 08:30:12,210:ERROR:Migration failed for table 'tbl_reportprocess_status': generator didn't stop after throw()
+2024-11-12 08:30:12,212:INFO:Connecting to MySQL (Attempt 1)...
+2024-11-12 08:30:12,811:INFO:MySQL connection established.
+2024-11-12 08:30:12,813:INFO:Connecting to PostgreSQL (Attempt 1)...
+2024-11-12 08:30:12,850:INFO:PostgreSQL connection established.
+2024-11-12 08:30:13,061:INFO:MySQL connection established.
+2024-11-12 08:30:13,065:INFO:Connecting to PostgreSQL (Attempt 1)...
+2024-11-12 08:30:13,097:INFO:PostgreSQL connection established.
+2024-11-12 08:30:13,250:ERROR:Failed to migrate data for table 'tbl_userdetails' to PostgreSQL: syntax error at or near ")"
+LINE 3:                     ON CONFLICT () DO UPDATE SET ID = EXCLUD...
+                                         ^
+
+2024-11-12 08:30:13,257:ERROR:PostgreSQL connection attempt 1 failed: syntax error at or near ")"
+LINE 3:                     ON CONFLICT () DO UPDATE SET ID = EXCLUD...
+                                         ^
+
+2024-11-12 08:30:13,260:INFO:Backoff delay: 2.36 seconds on attempt 2
+2024-11-12 08:30:15,632:INFO:PostgreSQL connection closed.
+2024-11-12 08:30:15,633:INFO:Connecting to PostgreSQL (Attempt 2)...
+2024-11-12 08:30:15,662:INFO:PostgreSQL connection established.
+2024-11-12 08:30:15,663:INFO:PostgreSQL connection closed.
+2024-11-12 08:30:15,731:INFO:MySQL connection closed.
+2024-11-12 08:30:15,735:ERROR:Migration failed for table 'tbl_userdetails': generator didn't stop after throw()
+2024-11-12 08:30:15,737:INFO:Connecting to MySQL (Attempt 1)...
+2024-11-12 08:30:16,203:INFO:MySQL connection established.
+2024-11-12 08:30:16,207:INFO:Connecting to PostgreSQL (Attempt 1)...
+2024-11-12 08:30:16,233:INFO:PostgreSQL connection established.
+2024-11-12 08:30:16,354:ERROR:Failed to migrate data for table 'tbl_website' to PostgreSQL: syntax error at or near ")"
+LINE 3:                     ON CONFLICT () DO UPDATE SET WebsiteId =...
+                                         ^
+
+2024-11-12 08:30:16,362:ERROR:PostgreSQL connection attempt 1 failed: syntax error at or near ")"
+LINE 3:                     ON CONFLICT () DO UPDATE SET WebsiteId =...
+                                         ^
+
+2024-11-12 08:30:16,364:INFO:Backoff delay: 1.86 seconds on attempt 2
+2024-11-12 08:30:18,231:INFO:PostgreSQL connection closed.
+2024-11-12 08:30:18,232:INFO:Connecting to PostgreSQL (Attempt 2)...
+2024-11-12 08:30:18,254:INFO:PostgreSQL connection established.
+2024-11-12 08:30:18,255:INFO:PostgreSQL connection closed.
+2024-11-12 08:30:18,308:INFO:MySQL connection closed.
+2024-11-12 08:30:18,318:ERROR:Migration failed for table 'tbl_website': generator didn't stop after throw()
+2024-11-12 08:30:18,322:INFO:Connecting to MySQL (Attempt 1)...
+2024-11-12 08:30:18,819:INFO:MySQL connection established.
+2024-11-12 08:30:18,823:INFO:Connecting to PostgreSQL (Attempt 1)...
+2024-11-12 08:30:18,853:INFO:PostgreSQL connection established.
+2024-11-12 08:30:18,980:INFO:No data found in MySQL table 'tc_v4_responsedata' to migrate.
+2024-11-12 08:30:18,982:INFO:PostgreSQL connection closed.
+2024-11-12 08:30:19,045:INFO:MySQL connection closed.
+2024-11-12 08:30:19,050:INFO:Successfully migrated table 'tc_v4_responsedata'
+2024-11-12 08:30:19,054:INFO:Connecting to MySQL (Attempt 1)...
+2024-11-12 08:30:19,595:INFO:MySQL connection established.
+2024-11-12 08:30:19,598:INFO:Connecting to PostgreSQL (Attempt 1)...
+2024-11-12 08:30:19,636:INFO:PostgreSQL connection established.
+2024-11-12 08:30:19,778:ERROR:Failed to migrate data for table 'test' to PostgreSQL: syntax error at or near ")"
+LINE 3:                     ON CONFLICT () DO UPDATE SET userid = EX...
+                                         ^
+
+2024-11-12 08:30:19,785:ERROR:PostgreSQL connection attempt 1 failed: syntax error at or near ")"
+LINE 3:                     ON CONFLICT () DO UPDATE SET userid = EX...
+                                         ^
+
+2024-11-12 08:30:19,789:INFO:Backoff delay: 2.05 seconds on attempt 2
+2024-11-12 08:30:21,849:INFO:PostgreSQL connection closed.
+2024-11-12 08:30:21,850:INFO:Connecting to PostgreSQL (Attempt 2)...
+2024-11-12 08:30:21,889:INFO:PostgreSQL connection established.
+2024-11-12 08:30:21,894:INFO:PostgreSQL connection closed.
+2024-11-12 08:30:21,955:INFO:MySQL connection closed.
+2024-11-12 08:30:21,961:ERROR:Migration failed for table 'test': generator didn't stop after throw()
+2024-11-12 08:30:21,963:INFO:Connecting to MySQL (Attempt 1)...
+2024-11-12 08:30:22,495:INFO:MySQL connection established.
+2024-11-12 08:30:22,498:INFO:Connecting to PostgreSQL (Attempt 1)...
+2024-11-12 08:30:22,536:INFO:PostgreSQL connection established.
+2024-11-12 08:30:22,737:ERROR:Failed to migrate data for table 'tests' to PostgreSQL: syntax error at or near ")"
+LINE 3:                     ON CONFLICT () DO UPDATE SET Numbers = E...
+                                         ^
+
+2024-11-12 08:30:22,746:ERROR:PostgreSQL connection attempt 1 failed: syntax error at or near ")"
+LINE 3:                     ON CONFLICT () DO UPDATE SET Numbers = E...
+                                         ^
+
+2024-11-12 08:30:22,751:INFO:Backoff delay: 2.33 seconds on attempt 2
+2024-11-12 08:30:25,084:INFO:PostgreSQL connection closed.
+2024-11-12 08:30:25,084:INFO:Connecting to PostgreSQL (Attempt 2)...
+2024-11-12 08:30:25,117:INFO:PostgreSQL connection established.
+2024-11-12 08:30:25,117:INFO:PostgreSQL connection closed.
+2024-11-12 08:30:25,185:INFO:MySQL connection closed.
+2024-11-12 08:30:25,194:ERROR:Migration failed for table 'tests': generator didn't stop after throw()
+2024-11-12 08:30:25,198:INFO:Connecting to MySQL (Attempt 1)...
+2024-11-12 08:30:25,754:INFO:MySQL connection established.
+2024-11-12 08:30:25,757:INFO:Connecting to PostgreSQL (Attempt 1)...
+2024-11-12 08:30:25,794:INFO:PostgreSQL connection established.
+2024-11-12 08:30:25,951:ERROR:Failed to migrate data for table 'tests1' to PostgreSQL: syntax error at or near ")"
+LINE 3:                     ON CONFLICT () DO UPDATE SET UserID = EX...
+                                         ^
+
+2024-11-12 08:30:25,953:ERROR:PostgreSQL connection attempt 1 failed: syntax error at or near ")"
+LINE 3:                     ON CONFLICT () DO UPDATE SET UserID = EX...
+                                         ^
+
+2024-11-12 08:30:25,958:INFO:Backoff delay: 2.26 seconds on attempt 2
+2024-11-12 08:30:28,220:INFO:PostgreSQL connection closed.
+2024-11-12 08:30:28,220:INFO:Connecting to PostgreSQL (Attempt 2)...
+2024-11-12 08:30:28,243:INFO:PostgreSQL connection established.
+2024-11-12 08:30:28,243:INFO:PostgreSQL connection closed.
+2024-11-12 08:30:28,342:INFO:MySQL connection closed.
+2024-11-12 08:30:28,343:ERROR:Migration failed for table 'tests1': generator didn't stop after throw()
+2024-11-12 08:30:30,607:ERROR:Failed to migrate data for table 'tbl_reportrequest' to PostgreSQL: syntax error at or near ")"
+LINE 3:                     ON CONFLICT () DO UPDATE SET ReportReque...
+                                         ^
+
+2024-11-12 08:30:30,613:ERROR:PostgreSQL connection attempt 1 failed: syntax error at or near ")"
+LINE 3:                     ON CONFLICT () DO UPDATE SET ReportReque...
+                                         ^
+
+2024-11-12 08:30:30,615:INFO:Backoff delay: 2.01 seconds on attempt 2
+2024-11-12 08:30:32,624:INFO:PostgreSQL connection closed.
+2024-11-12 08:30:32,624:INFO:Connecting to PostgreSQL (Attempt 2)...
+2024-11-12 08:30:32,653:INFO:PostgreSQL connection established.
+2024-11-12 08:30:32,653:INFO:PostgreSQL connection closed.
+2024-11-12 08:30:32,708:INFO:MySQL connection closed.
+2024-11-12 08:30:32,712:ERROR:Migration failed for table 'tbl_reportrequest': generator didn't stop after throw()
+2024-11-12 08:33:02,416:ERROR:Failed to migrate data for table 'tbl_requests' to PostgreSQL: syntax error at or near ")"
+LINE 3:                     ON CONFLICT () DO UPDATE SET requestid =...
+                                         ^
+
+2024-11-12 08:33:02,423:ERROR:PostgreSQL connection attempt 1 failed: syntax error at or near ")"
+LINE 3:                     ON CONFLICT () DO UPDATE SET requestid =...
+                                         ^
+
+2024-11-12 08:33:02,424:INFO:Backoff delay: 1.96 seconds on attempt 2
+2024-11-12 08:33:04,392:INFO:PostgreSQL connection closed.
+2024-11-12 08:33:04,392:INFO:Connecting to PostgreSQL (Attempt 2)...
+2024-11-12 08:33:04,417:INFO:PostgreSQL connection established.
+2024-11-12 08:33:04,418:INFO:PostgreSQL connection closed.
+2024-11-12 08:33:04,481:INFO:MySQL connection closed.
+2024-11-12 08:33:04,484:ERROR:Migration failed for table 'tbl_requests': generator didn't stop after throw()
+2024-11-12 08:36:24,161:INFO:Logging has been configured successfully.
+2024-11-12 08:36:24,162:INFO:Starting migration process.
+2024-11-12 08:36:24,162:INFO:Database configurations loaded successfully.
+2024-11-12 08:36:24,163:INFO:Email configuration loaded successfully.
+2024-11-12 08:36:42,827:INFO:Connecting to MySQL (Attempt 1)...
+2024-11-12 08:36:43,215:INFO:MySQL connection established.
+2024-11-12 08:37:21,232:INFO:MySQL connection closed.
+2024-11-12 08:37:27,816:INFO:Logging has been configured successfully.
+2024-11-12 08:37:27,817:INFO:Starting migration process.
+2024-11-12 08:37:27,817:INFO:Database configurations loaded successfully.
+2024-11-12 08:37:27,818:INFO:Email configuration loaded successfully.
+2024-11-12 08:37:41,676:INFO:Connecting to MySQL (Attempt 1)...
+2024-11-12 08:37:42,051:INFO:MySQL connection established.
+2024-11-12 08:38:31,033:INFO:MySQL connection closed.
+2024-11-12 08:38:31,033:INFO:Connecting to PostgreSQL (Attempt 1)...
+2024-11-12 08:38:31,057:INFO:PostgreSQL connection established.
+2024-11-12 08:38:31,057:INFO:Using schema 'public' for PostgreSQL migrations.
+2024-11-12 08:38:31,058:INFO:PostgreSQL connection closed.
+2024-11-12 08:38:31,058:INFO:Starting multi-threaded migration.
+2024-11-12 08:38:31,059:INFO:Connecting to MySQL (Attempt 1)...
+2024-11-12 08:38:31,059:INFO:Connecting to MySQL (Attempt 1)...
+2024-11-12 08:38:31,060:INFO:Connecting to MySQL (Attempt 1)...
+2024-11-12 08:38:31,060:INFO:Connecting to MySQL (Attempt 1)...
+2024-11-12 08:38:31,060:INFO:Connecting to MySQL (Attempt 1)...
+2024-11-12 08:38:31,060:INFO:Connecting to MySQL (Attempt 1)...
+2024-11-12 08:38:31,061:INFO:Connecting to MySQL (Attempt 1)...
+2024-11-12 08:38:31,061:INFO:Connecting to MySQL (Attempt 1)...
+2024-11-12 08:38:31,062:INFO:Connecting to MySQL (Attempt 1)...
+2024-11-12 08:38:31,062:INFO:Connecting to MySQL (Attempt 1)...
+2024-11-12 08:38:31,668:INFO:MySQL connection established.
+2024-11-12 08:38:31,668:INFO:MySQL connection established.
+2024-11-12 08:38:31,837:INFO:MySQL connection established.
+2024-11-12 08:38:31,925:INFO:MySQL connection established.
+2024-11-12 08:38:32,007:INFO:MySQL connection established.
+2024-11-12 08:38:32,175:INFO:MySQL connection established.
+2024-11-12 08:38:32,175:INFO:MySQL connection established.
+2024-11-12 08:38:32,175:INFO:MySQL connection established.
+2024-11-12 08:38:32,175:INFO:MySQL connection established.
+2024-11-12 08:38:32,175:INFO:MySQL connection established.
+2024-11-12 08:38:32,175:INFO:Connecting to PostgreSQL (Attempt 1)...
+2024-11-12 08:38:32,176:INFO:Connecting to PostgreSQL (Attempt 1)...
+2024-11-12 08:38:32,176:INFO:Connecting to PostgreSQL (Attempt 1)...
+2024-11-12 08:38:32,177:INFO:Connecting to PostgreSQL (Attempt 1)...
+2024-11-12 08:38:32,177:INFO:Connecting to PostgreSQL (Attempt 1)...
+2024-11-12 08:38:32,177:INFO:Connecting to PostgreSQL (Attempt 1)...
+2024-11-12 08:38:32,177:INFO:Connecting to PostgreSQL (Attempt 1)...
+2024-11-12 08:38:32,178:INFO:Connecting to PostgreSQL (Attempt 1)...
+2024-11-12 08:38:32,178:INFO:Connecting to PostgreSQL (Attempt 1)...
+2024-11-12 08:38:32,178:INFO:Connecting to PostgreSQL (Attempt 1)...
+2024-11-12 08:38:32,203:INFO:PostgreSQL connection established.
+2024-11-12 08:38:32,244:INFO:PostgreSQL connection established.
+2024-11-12 08:38:32,244:INFO:PostgreSQL connection established.
+2024-11-12 08:38:32,244:INFO:PostgreSQL connection established.
+2024-11-12 08:38:32,244:INFO:PostgreSQL connection established.
+2024-11-12 08:38:32,244:INFO:PostgreSQL connection established.
+2024-11-12 08:38:32,244:INFO:PostgreSQL connection established.
+2024-11-12 08:38:32,244:INFO:PostgreSQL connection established.
+2024-11-12 08:38:32,244:INFO:PostgreSQL connection established.
+2024-11-12 08:38:32,244:INFO:PostgreSQL connection established.
+2024-11-12 08:38:32,415:ERROR:Failed to migrate data for table 'tbl_authorization' to PostgreSQL: relation "tbl_authorization" does not exist
+LINE 2:                     INSERT INTO "tbl_authorization" ("authid...
+                                        ^
+
+2024-11-12 08:38:32,506:ERROR:Failed to migrate data for table 'tbl_customercreditstatus_bak18may2023' to PostgreSQL: relation "tbl_customercreditstatus_bak18may2023" does not exist
+LINE 2:                     INSERT INTO "tbl_customercreditstatus_ba...
+                                        ^
+
+2024-11-12 08:38:32,635:ERROR:Failed to migrate data for table 'tbl_customercreditstatus' to PostgreSQL: relation "tbl_customercreditstatus" does not exist
+LINE 2:                     INSERT INTO "tbl_customercreditstatus" (...
+                                        ^
+
+2024-11-12 08:38:32,637:ERROR:PostgreSQL connection attempt 1 failed: relation "tbl_authorization" does not exist
+LINE 2:                     INSERT INTO "tbl_authorization" ("authid...
+                                        ^
+
+2024-11-12 08:38:32,637:INFO:No data found in MySQL table 'spammed_name_matched_report' to migrate.
+2024-11-12 08:38:32,637:ERROR:Failed to migrate data for table 'tbl_customercreditrequests' to PostgreSQL: relation "tbl_customercreditrequests" does not exist
+LINE 2:                     INSERT INTO "tbl_customercreditrequests"...
+                                        ^
+
+2024-11-12 08:38:32,638:ERROR:PostgreSQL connection attempt 1 failed: relation "tbl_customercreditstatus_bak18may2023" does not exist
+LINE 2:                     INSERT INTO "tbl_customercreditstatus_ba...
+                                        ^
+
+2024-11-12 08:38:32,638:ERROR:Failed to migrate data for table 'tbl_customer_master_list' to PostgreSQL: relation "tbl_customer_master_list" does not exist
+LINE 2:                     INSERT INTO "tbl_customer_master_list" (...
+                                        ^
+
+2024-11-12 08:38:32,638:ERROR:PostgreSQL connection attempt 1 failed: relation "tbl_customercreditstatus" does not exist
+LINE 2:                     INSERT INTO "tbl_customercreditstatus" (...
+                                        ^
+
+2024-11-12 08:38:32,638:INFO:Backoff delay: 2.39 seconds on attempt 2
+2024-11-12 08:38:32,640:INFO:PostgreSQL connection closed.
+2024-11-12 08:38:32,640:ERROR:PostgreSQL connection attempt 1 failed: relation "tbl_customercreditrequests" does not exist
+LINE 2:                     INSERT INTO "tbl_customercreditrequests"...
+                                        ^
+
+2024-11-12 08:38:32,641:INFO:Backoff delay: 2.22 seconds on attempt 2
+2024-11-12 08:38:32,642:ERROR:PostgreSQL connection attempt 1 failed: relation "tbl_customer_master_list" does not exist
+LINE 2:                     INSERT INTO "tbl_customer_master_list" (...
+                                        ^
+
+2024-11-12 08:38:32,642:INFO:Backoff delay: 1.62 seconds on attempt 2
+2024-11-12 08:38:32,689:INFO:MySQL connection closed.
+2024-11-12 08:38:32,689:INFO:Backoff delay: 2.29 seconds on attempt 2
+2024-11-12 08:38:32,689:ERROR:Failed to migrate data for table 'tbl_clienttoken' to PostgreSQL: relation "tbl_clienttoken" does not exist
+LINE 2:                     INSERT INTO "tbl_clienttoken" ("ID", "Cl...
+                                        ^
+
+2024-11-12 08:38:32,691:INFO:Backoff delay: 1.75 seconds on attempt 2
+2024-11-12 08:38:32,691:INFO:Successfully migrated table 'spammed_name_matched_report'
+2024-11-12 08:38:32,693:ERROR:PostgreSQL connection attempt 1 failed: relation "tbl_clienttoken" does not exist
+LINE 2:                     INSERT INTO "tbl_clienttoken" ("ID", "Cl...
+                                        ^
+
+2024-11-12 08:38:32,694:INFO:Connecting to MySQL (Attempt 1)...
+2024-11-12 08:38:32,697:INFO:Backoff delay: 2.32 seconds on attempt 2
+2024-11-12 08:38:32,700:ERROR:Failed to migrate data for table 'spam_names' to PostgreSQL: relation "spam_names" does not exist
+LINE 2:                     INSERT INTO "spam_names" ("id", "name", ...
+                                        ^
+
+2024-11-12 08:38:32,700:ERROR:PostgreSQL connection attempt 1 failed: relation "spam_names" does not exist
+LINE 2:                     INSERT INTO "spam_names" ("id", "name", ...
+                                        ^
+
+2024-11-12 08:38:32,701:INFO:Backoff delay: 1.80 seconds on attempt 2
+2024-11-12 08:38:32,701:ERROR:Failed to migrate data for table 'tbl_customer_master_list_columnmapping' to PostgreSQL: relation "tbl_customer_master_list_columnmapping" does not exist
+LINE 2:                     INSERT INTO "tbl_customer_master_list_co...
+                                        ^
+
+2024-11-12 08:38:32,702:ERROR:PostgreSQL connection attempt 1 failed: relation "tbl_customer_master_list_columnmapping" does not exist
+LINE 2:                     INSERT INTO "tbl_customer_master_list_co...
+                                        ^
+
+2024-11-12 08:38:32,702:INFO:Backoff delay: 2.15 seconds on attempt 2
+2024-11-12 08:38:32,714:ERROR:Failed to migrate data for table 'tbl_customer_master_list1' to PostgreSQL: relation "tbl_customer_master_list1" does not exist
+LINE 2:                     INSERT INTO "tbl_customer_master_list1" ...
+                                        ^
+
+2024-11-12 08:38:32,715:ERROR:PostgreSQL connection attempt 1 failed: relation "tbl_customer_master_list1" does not exist
+LINE 2:                     INSERT INTO "tbl_customer_master_list1" ...
+                                        ^
+
+2024-11-12 08:38:32,715:INFO:Backoff delay: 1.92 seconds on attempt 2
+2024-11-12 08:38:33,051:INFO:MySQL connection established.
+2024-11-12 08:38:33,052:INFO:Connecting to PostgreSQL (Attempt 1)...
+2024-11-12 08:38:33,074:INFO:PostgreSQL connection established.
+2024-11-12 08:38:34,315:INFO:PostgreSQL connection closed.
+2024-11-12 08:38:34,315:INFO:Connecting to PostgreSQL (Attempt 2)...
+2024-11-12 08:38:34,341:INFO:PostgreSQL connection established.
+2024-11-12 08:38:34,342:INFO:PostgreSQL connection closed.
+2024-11-12 08:38:34,426:INFO:MySQL connection closed.
+2024-11-12 08:38:34,426:ERROR:Migration failed for table 'tbl_customercreditstatus': generator didn't stop after throw()
+2024-11-12 08:38:34,427:INFO:Connecting to MySQL (Attempt 1)...
+2024-11-12 08:38:34,444:INFO:PostgreSQL connection closed.
+2024-11-12 08:38:34,445:INFO:Connecting to PostgreSQL (Attempt 2)...
+2024-11-12 08:38:34,469:INFO:PostgreSQL connection established.
+2024-11-12 08:38:34,469:INFO:PostgreSQL connection closed.
+2024-11-12 08:38:34,559:INFO:PostgreSQL connection closed.
+2024-11-12 08:38:34,559:INFO:MySQL connection closed.
+2024-11-12 08:38:34,560:INFO:Connecting to PostgreSQL (Attempt 2)...
+2024-11-12 08:38:34,560:ERROR:Migration failed for table 'tbl_customer_master_list': generator didn't stop after throw()
+2024-11-12 08:38:34,561:INFO:Connecting to MySQL (Attempt 1)...
+2024-11-12 08:38:34,588:INFO:PostgreSQL connection established.
+2024-11-12 08:38:34,589:INFO:PostgreSQL connection closed.
+2024-11-12 08:38:34,675:INFO:PostgreSQL connection closed.
+2024-11-12 08:38:34,675:INFO:MySQL connection closed.
+2024-11-12 08:38:34,676:INFO:Connecting to PostgreSQL (Attempt 2)...
+2024-11-12 08:38:34,677:ERROR:Migration failed for table 'spam_names': generator didn't stop after throw()
+2024-11-12 08:38:34,677:INFO:Connecting to MySQL (Attempt 1)...
+2024-11-12 08:38:34,700:INFO:PostgreSQL connection established.
+2024-11-12 08:38:34,701:INFO:PostgreSQL connection closed.
+2024-11-12 08:38:34,788:INFO:MySQL connection closed.
+2024-11-12 08:38:34,790:ERROR:Migration failed for table 'tbl_customer_master_list1': generator didn't stop after throw()
+2024-11-12 08:38:34,790:INFO:Connecting to MySQL (Attempt 1)...
+2024-11-12 08:38:34,853:INFO:PostgreSQL connection closed.
+2024-11-12 08:38:34,854:INFO:Connecting to PostgreSQL (Attempt 2)...
+2024-11-12 08:38:34,877:INFO:PostgreSQL connection established.
+2024-11-12 08:38:34,879:INFO:PostgreSQL connection closed.
+2024-11-12 08:38:34,945:INFO:MySQL connection closed.
+2024-11-12 08:38:34,945:INFO:PostgreSQL connection closed.
+2024-11-12 08:38:34,946:ERROR:Migration failed for table 'tbl_customer_master_list_columnmapping': generator didn't stop after throw()
+2024-11-12 08:38:34,946:INFO:Connecting to PostgreSQL (Attempt 2)...
+2024-11-12 08:38:34,947:INFO:Connecting to MySQL (Attempt 1)...
+2024-11-12 08:38:34,974:INFO:PostgreSQL connection established.
+2024-11-12 08:38:34,975:INFO:PostgreSQL connection closed.
+2024-11-12 08:38:35,095:INFO:PostgreSQL connection closed.
+2024-11-12 08:38:35,140:INFO:PostgreSQL connection closed.
+2024-11-12 08:38:35,182:INFO:MySQL connection closed.
+2024-11-12 08:38:35,222:INFO:PostgreSQL connection closed.
+2024-11-12 08:38:35,222:INFO:MySQL connection established.
+2024-11-12 08:38:35,351:INFO:MySQL connection established.
+2024-11-12 08:38:35,351:INFO:Connecting to PostgreSQL (Attempt 2)...
+2024-11-12 08:38:35,489:INFO:MySQL connection established.
+2024-11-12 08:38:35,489:INFO:MySQL connection established.
+2024-11-12 08:38:35,489:INFO:MySQL connection established.
+2024-11-12 08:38:35,490:INFO:Connecting to PostgreSQL (Attempt 2)...
+2024-11-12 08:38:35,490:ERROR:Migration failed for table 'tbl_customercreditstatus_bak18may2023': generator didn't stop after throw()
+2024-11-12 08:38:35,491:INFO:Connecting to PostgreSQL (Attempt 2)...
+2024-11-12 08:38:35,491:INFO:Connecting to PostgreSQL (Attempt 1)...
+2024-11-12 08:38:35,492:INFO:Connecting to PostgreSQL (Attempt 1)...
+2024-11-12 08:38:35,493:INFO:Connecting to PostgreSQL (Attempt 1)...
+2024-11-12 08:38:35,493:INFO:Connecting to PostgreSQL (Attempt 1)...
+2024-11-12 08:38:35,494:INFO:Connecting to PostgreSQL (Attempt 1)...
+2024-11-12 08:38:35,495:INFO:Connecting to MySQL (Attempt 1)...
+2024-11-12 08:38:35,519:INFO:PostgreSQL connection established.
+2024-11-12 08:38:35,519:INFO:PostgreSQL connection closed.
+2024-11-12 08:38:35,560:INFO:PostgreSQL connection established.
+2024-11-12 08:38:35,561:INFO:PostgreSQL connection established.
+2024-11-12 08:38:35,561:INFO:PostgreSQL connection established.
+2024-11-12 08:38:35,561:INFO:PostgreSQL connection established.
+2024-11-12 08:38:35,561:INFO:PostgreSQL connection established.
+2024-11-12 08:38:35,561:INFO:PostgreSQL connection established.
+2024-11-12 08:38:35,561:INFO:PostgreSQL connection established.
+2024-11-12 08:38:35,561:INFO:MySQL connection closed.
+2024-11-12 08:38:35,650:INFO:PostgreSQL connection closed.
+2024-11-12 08:38:35,692:INFO:PostgreSQL connection closed.
+2024-11-12 08:38:35,780:ERROR:Failed to migrate data for table 'tbl_reportprocess_status' to PostgreSQL: relation "tbl_reportprocess_status" does not exist
+LINE 2:                     INSERT INTO "tbl_reportprocess_status" (...
+                                        ^
+
+2024-11-12 08:38:35,781:ERROR:Migration failed for table 'tbl_customercreditrequests': generator didn't stop after throw()
+2024-11-12 08:38:35,824:INFO:MySQL connection closed.
+2024-11-12 08:38:35,912:INFO:MySQL connection established.
+2024-11-12 08:38:35,953:INFO:MySQL connection closed.
+2024-11-12 08:38:35,956:ERROR:PostgreSQL connection attempt 1 failed: relation "tbl_reportprocess_status" does not exist
+LINE 2:                     INSERT INTO "tbl_reportprocess_status" (...
+                                        ^
+
+2024-11-12 08:38:35,957:INFO:Connecting to MySQL (Attempt 1)...
+2024-11-12 08:38:35,959:ERROR:Migration failed for table 'tbl_authorization': generator didn't stop after throw()
+2024-11-12 08:38:35,960:INFO:Connecting to PostgreSQL (Attempt 1)...
+2024-11-12 08:38:35,962:ERROR:Migration failed for table 'tbl_clienttoken': generator didn't stop after throw()
+2024-11-12 08:38:35,964:INFO:Backoff delay: 2.26 seconds on attempt 2
+2024-11-12 08:38:35,969:INFO:Connecting to MySQL (Attempt 1)...
+2024-11-12 08:38:35,970:ERROR:Failed to migrate data for table 'tbl_reportstats' to PostgreSQL: relation "tbl_reportstats" does not exist
+LINE 2:                     INSERT INTO "tbl_reportstats" ("ID", "Li...
+                                        ^
+
+2024-11-12 08:38:35,971:INFO:Connecting to MySQL (Attempt 1)...
+2024-11-12 08:38:35,977:ERROR:PostgreSQL connection attempt 1 failed: relation "tbl_reportstats" does not exist
+LINE 2:                     INSERT INTO "tbl_reportstats" ("ID", "Li...
+                                        ^
+
+2024-11-12 08:38:35,978:INFO:Backoff delay: 2.37 seconds on attempt 2
+2024-11-12 08:38:36,001:INFO:PostgreSQL connection established.
+2024-11-12 08:38:36,655:INFO:MySQL connection established.
+2024-11-12 08:38:36,821:INFO:MySQL connection established.
+2024-11-12 08:38:36,821:INFO:MySQL connection established.
+2024-11-12 08:38:36,821:INFO:Connecting to PostgreSQL (Attempt 1)...
+2024-11-12 08:38:36,822:INFO:Connecting to PostgreSQL (Attempt 1)...
+2024-11-12 08:38:36,823:INFO:Connecting to PostgreSQL (Attempt 1)...
+2024-11-12 08:38:36,848:INFO:PostgreSQL connection established.
+2024-11-12 08:38:36,912:INFO:PostgreSQL connection established.
+2024-11-12 08:38:36,913:INFO:PostgreSQL connection established.
+2024-11-12 08:38:38,230:INFO:PostgreSQL connection closed.
+2024-11-12 08:38:38,230:INFO:Connecting to PostgreSQL (Attempt 2)...
+2024-11-12 08:38:38,261:INFO:PostgreSQL connection established.
+2024-11-12 08:38:38,261:INFO:PostgreSQL connection closed.
+2024-11-12 08:38:38,364:INFO:MySQL connection closed.
+2024-11-12 08:38:38,365:INFO:PostgreSQL connection closed.
+2024-11-12 08:38:38,367:ERROR:Migration failed for table 'tbl_reportprocess_status': generator didn't stop after throw()
+2024-11-12 08:38:38,370:INFO:Connecting to PostgreSQL (Attempt 2)...
+2024-11-12 08:38:38,372:INFO:Connecting to MySQL (Attempt 1)...
+2024-11-12 08:38:38,396:INFO:PostgreSQL connection established.
+2024-11-12 08:38:38,398:INFO:PostgreSQL connection closed.
+2024-11-12 08:38:38,513:INFO:MySQL connection closed.
+2024-11-12 08:38:38,516:ERROR:Migration failed for table 'tbl_reportstats': generator didn't stop after throw()
+2024-11-12 08:38:38,518:INFO:Connecting to MySQL (Attempt 1)...
+2024-11-12 08:38:39,167:INFO:MySQL connection established.
+2024-11-12 08:38:39,174:INFO:Connecting to PostgreSQL (Attempt 1)...
+2024-11-12 08:38:39,200:INFO:PostgreSQL connection established.
+2024-11-12 08:38:39,486:INFO:MySQL connection established.
+2024-11-12 08:38:39,490:INFO:Connecting to PostgreSQL (Attempt 1)...
+2024-11-12 08:38:39,515:INFO:PostgreSQL connection established.
+2024-11-12 08:38:39,657:ERROR:Failed to migrate data for table 'tbl_userdetails' to PostgreSQL: relation "tbl_userdetails" does not exist
+LINE 2:                     INSERT INTO "tbl_userdetails" ("ID", "Us...
+                                        ^
+
+2024-11-12 08:38:39,659:ERROR:PostgreSQL connection attempt 1 failed: relation "tbl_userdetails" does not exist
+LINE 2:                     INSERT INTO "tbl_userdetails" ("ID", "Us...
+                                        ^
+
+2024-11-12 08:38:39,663:INFO:Backoff delay: 1.75 seconds on attempt 2
+2024-11-12 08:38:41,415:INFO:PostgreSQL connection closed.
+2024-11-12 08:38:41,415:INFO:Connecting to PostgreSQL (Attempt 2)...
+2024-11-12 08:38:41,442:INFO:PostgreSQL connection established.
+2024-11-12 08:38:41,443:INFO:PostgreSQL connection closed.
+2024-11-12 08:38:41,515:INFO:MySQL connection closed.
+2024-11-12 08:38:41,518:ERROR:Migration failed for table 'tbl_userdetails': generator didn't stop after throw()
+2024-11-12 08:38:41,521:INFO:Connecting to MySQL (Attempt 1)...
+2024-11-12 08:38:42,143:INFO:MySQL connection established.
+2024-11-12 08:38:42,145:INFO:Connecting to PostgreSQL (Attempt 1)...
+2024-11-12 08:38:42,171:INFO:PostgreSQL connection established.
+2024-11-12 08:38:42,324:ERROR:Failed to migrate data for table 'tbl_website' to PostgreSQL: relation "tbl_website" does not exist
+LINE 2:                     INSERT INTO "tbl_website" ("WebsiteId", ...
+                                        ^
+
+2024-11-12 08:38:42,326:ERROR:PostgreSQL connection attempt 1 failed: relation "tbl_website" does not exist
+LINE 2:                     INSERT INTO "tbl_website" ("WebsiteId", ...
+                                        ^
+
+2024-11-12 08:38:42,327:INFO:Backoff delay: 1.80 seconds on attempt 2
+2024-11-12 08:38:44,129:INFO:PostgreSQL connection closed.
+2024-11-12 08:38:44,129:INFO:Connecting to PostgreSQL (Attempt 2)...
+2024-11-12 08:38:44,160:INFO:PostgreSQL connection established.
+2024-11-12 08:38:44,161:INFO:PostgreSQL connection closed.
+2024-11-12 08:38:44,219:INFO:MySQL connection closed.
+2024-11-12 08:38:44,222:ERROR:Migration failed for table 'tbl_website': generator didn't stop after throw()
+2024-11-12 08:38:44,225:INFO:Connecting to MySQL (Attempt 1)...
+2024-11-12 08:38:44,696:ERROR:Failed to migrate data for table 'tbl_reportrequest' to PostgreSQL: relation "tbl_reportrequest" does not exist
+LINE 2:                     INSERT INTO "tbl_reportrequest" ("Report...
+                                        ^
+
+2024-11-12 08:38:44,696:INFO:MySQL connection established.
+2024-11-12 08:38:44,701:ERROR:PostgreSQL connection attempt 1 failed: relation "tbl_reportrequest" does not exist
+LINE 2:                     INSERT INTO "tbl_reportrequest" ("Report...
+                                        ^
+
+2024-11-12 08:38:44,702:INFO:Connecting to PostgreSQL (Attempt 1)...
+2024-11-12 08:38:44,703:INFO:Backoff delay: 1.90 seconds on attempt 2
+2024-11-12 08:38:44,730:INFO:PostgreSQL connection established.
+2024-11-12 08:38:44,828:INFO:No data found in MySQL table 'tc_v4_responsedata' to migrate.
+2024-11-12 08:38:44,835:INFO:PostgreSQL connection closed.
+2024-11-12 08:38:44,882:INFO:MySQL connection closed.
+2024-11-12 08:38:44,884:INFO:Successfully migrated table 'tc_v4_responsedata'
+2024-11-12 08:38:44,888:INFO:Connecting to MySQL (Attempt 1)...
+2024-11-12 08:38:45,311:INFO:MySQL connection established.
+2024-11-12 08:38:45,314:INFO:Connecting to PostgreSQL (Attempt 1)...
+2024-11-12 08:38:45,340:INFO:PostgreSQL connection established.
+2024-11-12 08:38:45,447:ERROR:Failed to migrate data for table 'test' to PostgreSQL: relation "test" does not exist
+LINE 2:                     INSERT INTO "test" ("userid", "authpin",...
+                                        ^
+
+2024-11-12 08:38:45,448:ERROR:PostgreSQL connection attempt 1 failed: relation "test" does not exist
+LINE 2:                     INSERT INTO "test" ("userid", "authpin",...
+                                        ^
+
+2024-11-12 08:38:45,449:INFO:Backoff delay: 2.15 seconds on attempt 2
+2024-11-12 08:38:46,612:INFO:PostgreSQL connection closed.
+2024-11-12 08:38:46,613:INFO:Connecting to PostgreSQL (Attempt 2)...
+2024-11-12 08:38:46,635:INFO:PostgreSQL connection established.
+2024-11-12 08:38:46,636:INFO:PostgreSQL connection closed.
+2024-11-12 08:38:46,700:INFO:MySQL connection closed.
+2024-11-12 08:38:46,704:ERROR:Migration failed for table 'tbl_reportrequest': generator didn't stop after throw()
+2024-11-12 08:38:46,743:INFO:Connecting to MySQL (Attempt 1)...
+2024-11-12 08:38:47,263:INFO:MySQL connection established.
+2024-11-12 08:38:47,270:INFO:Connecting to PostgreSQL (Attempt 1)...
+2024-11-12 08:38:47,298:INFO:PostgreSQL connection established.
+2024-11-12 08:38:47,432:ERROR:Failed to migrate data for table 'tests' to PostgreSQL: relation "tests" does not exist
+LINE 2:                     INSERT INTO "tests" ("Numbers", "ListID"...
+                                        ^
+
+2024-11-12 08:38:47,433:ERROR:PostgreSQL connection attempt 1 failed: relation "tests" does not exist
+LINE 2:                     INSERT INTO "tests" ("Numbers", "ListID"...
+                                        ^
+
+2024-11-12 08:38:47,434:INFO:Backoff delay: 1.67 seconds on attempt 2
+2024-11-12 08:38:47,604:INFO:PostgreSQL connection closed.
+2024-11-12 08:38:47,604:INFO:Connecting to PostgreSQL (Attempt 2)...
+2024-11-12 08:38:47,627:INFO:PostgreSQL connection established.
+2024-11-12 08:38:47,628:INFO:PostgreSQL connection closed.
+2024-11-12 08:38:47,692:INFO:MySQL connection closed.
+2024-11-12 08:38:47,697:ERROR:Migration failed for table 'test': generator didn't stop after throw()
+2024-11-12 08:38:47,699:INFO:Connecting to MySQL (Attempt 1)...
+2024-11-12 08:38:48,276:INFO:MySQL connection established.
+2024-11-12 08:38:48,289:INFO:Connecting to PostgreSQL (Attempt 1)...
+2024-11-12 08:38:48,316:INFO:PostgreSQL connection established.
+2024-11-12 08:38:48,437:ERROR:Failed to migrate data for table 'tests1' to PostgreSQL: relation "tests1" does not exist
+LINE 2:                     INSERT INTO "tests1" ("UserID", "AuthPIN...
+                                        ^
+
+2024-11-12 08:38:48,439:ERROR:PostgreSQL connection attempt 1 failed: relation "tests1" does not exist
+LINE 2:                     INSERT INTO "tests1" ("UserID", "AuthPIN...
+                                        ^
+
+2024-11-12 08:38:48,440:INFO:Backoff delay: 1.78 seconds on attempt 2
+2024-11-12 08:38:49,104:INFO:PostgreSQL connection closed.
+2024-11-12 08:38:49,104:INFO:Connecting to PostgreSQL (Attempt 2)...
+2024-11-12 08:38:49,127:INFO:PostgreSQL connection established.
+2024-11-12 08:38:49,128:INFO:PostgreSQL connection closed.
+2024-11-12 08:38:49,190:INFO:MySQL connection closed.
+2024-11-12 08:38:49,195:ERROR:Migration failed for table 'tests': generator didn't stop after throw()
+2024-11-12 08:38:50,227:INFO:PostgreSQL connection closed.
+2024-11-12 08:38:50,227:INFO:Connecting to PostgreSQL (Attempt 2)...
+2024-11-12 08:38:50,255:INFO:PostgreSQL connection established.
+2024-11-12 08:38:50,256:INFO:PostgreSQL connection closed.
+2024-11-12 08:38:50,323:INFO:MySQL connection closed.
+2024-11-12 08:38:50,328:ERROR:Migration failed for table 'tests1': generator didn't stop after throw()
+2024-11-12 08:40:20,333:ERROR:Failed to migrate data for table 'tbl_requests' to PostgreSQL: relation "tbl_requests" does not exist
+LINE 2:                     INSERT INTO "tbl_requests" ("requestid",...
+                                        ^
+
+2024-11-12 08:40:20,340:ERROR:PostgreSQL connection attempt 1 failed: relation "tbl_requests" does not exist
+LINE 2:                     INSERT INTO "tbl_requests" ("requestid",...
+                                        ^
+
+2024-11-12 08:40:20,342:INFO:Backoff delay: 1.62 seconds on attempt 2
+2024-11-12 08:40:21,965:INFO:PostgreSQL connection closed.
+2024-11-12 08:40:21,966:INFO:Connecting to PostgreSQL (Attempt 2)...
+2024-11-12 08:40:21,989:INFO:PostgreSQL connection established.
+2024-11-12 08:40:21,989:INFO:PostgreSQL connection closed.
+2024-11-12 08:40:22,083:INFO:MySQL connection closed.
+2024-11-12 08:40:22,086:ERROR:Migration failed for table 'tbl_requests': generator didn't stop after throw()
+2024-11-12 08:43:26,286:ERROR:Failed to migrate data for table 'tbl_responsedata12_13_2021' to PostgreSQL: relation "tbl_responsedata12_13_2021" does not exist
+LINE 2:                     INSERT INTO "tbl_responsedata12_13_2021"...
+                                        ^
+
+2024-11-12 08:43:26,292:ERROR:PostgreSQL connection attempt 1 failed: relation "tbl_responsedata12_13_2021" does not exist
+LINE 2:                     INSERT INTO "tbl_responsedata12_13_2021"...
+                                        ^
+
+2024-11-12 08:43:26,295:INFO:Backoff delay: 2.29 seconds on attempt 2
+2024-11-12 08:43:28,590:INFO:PostgreSQL connection closed.
+2024-11-12 08:43:28,591:INFO:Connecting to PostgreSQL (Attempt 2)...
+2024-11-12 08:43:28,619:INFO:PostgreSQL connection established.
+2024-11-12 08:43:28,621:INFO:PostgreSQL connection closed.
+2024-11-12 08:43:28,709:INFO:MySQL connection closed.
+2024-11-12 08:43:28,715:ERROR:Migration failed for table 'tbl_responsedata12_13_2021': generator didn't stop after throw()
+2024-11-12 08:48:51,965:ERROR:Failed to migrate data for table 'tbl_reportrequest_archive' to PostgreSQL: relation "tbl_reportrequest_archive" does not exist
+LINE 2:                     INSERT INTO "tbl_reportrequest_archive" ...
+                                        ^
+
+2024-11-12 08:48:51,969:ERROR:PostgreSQL connection attempt 1 failed: relation "tbl_reportrequest_archive" does not exist
+LINE 2:                     INSERT INTO "tbl_reportrequest_archive" ...
+                                        ^
+
+2024-11-12 08:48:51,972:INFO:Backoff delay: 1.78 seconds on attempt 2
+2024-11-12 08:48:53,761:INFO:PostgreSQL connection closed.
+2024-11-12 08:48:53,761:INFO:Connecting to PostgreSQL (Attempt 2)...
+2024-11-12 08:48:53,786:INFO:PostgreSQL connection established.
+2024-11-12 08:48:53,786:INFO:PostgreSQL connection closed.
+2024-11-12 08:48:53,866:INFO:MySQL connection closed.
+2024-11-12 08:48:53,869:ERROR:Migration failed for table 'tbl_reportrequest_archive': generator didn't stop after throw()
+2024-11-12 08:50:28,424:ERROR:Failed to migrate data for table 'tbl_responsedata1' to PostgreSQL: relation "tbl_responsedata1" does not exist
+LINE 2:                     INSERT INTO "tbl_responsedata1" ("respon...
+                                        ^
+
+2024-11-12 08:50:28,429:ERROR:PostgreSQL connection attempt 1 failed: relation "tbl_responsedata1" does not exist
+LINE 2:                     INSERT INTO "tbl_responsedata1" ("respon...
+                                        ^
+
+2024-11-12 08:50:28,431:INFO:Backoff delay: 2.05 seconds on attempt 2
+2024-11-12 08:50:30,481:INFO:PostgreSQL connection closed.
+2024-11-12 08:50:30,482:INFO:Connecting to PostgreSQL (Attempt 2)...
+2024-11-12 08:50:30,512:INFO:PostgreSQL connection established.
+2024-11-12 08:50:30,513:INFO:PostgreSQL connection closed.
+2024-11-12 08:50:30,563:INFO:MySQL connection closed.
+2024-11-12 08:50:30,567:ERROR:Migration failed for table 'tbl_responsedata1': generator didn't stop after throw()
+2024-11-12 08:51:09,717:ERROR:Failed to migrate data for table 'tbl_master_requests' to PostgreSQL: relation "tbl_master_requests" does not exist
+LINE 2:                     INSERT INTO "tbl_master_requests" ("Requ...
+                                        ^
+
+2024-11-12 08:51:09,720:ERROR:PostgreSQL connection attempt 1 failed: relation "tbl_master_requests" does not exist
+LINE 2:                     INSERT INTO "tbl_master_requests" ("Requ...
+                                        ^
+
+2024-11-12 08:51:09,722:INFO:Backoff delay: 1.74 seconds on attempt 2
+2024-11-12 08:51:11,466:INFO:PostgreSQL connection closed.
+2024-11-12 08:51:11,467:INFO:Connecting to PostgreSQL (Attempt 2)...
+2024-11-12 08:51:11,493:INFO:PostgreSQL connection established.
+2024-11-12 08:51:11,494:INFO:PostgreSQL connection closed.
+2024-11-12 08:51:11,591:INFO:MySQL connection closed.
+2024-11-12 08:51:11,594:ERROR:Migration failed for table 'tbl_master_requests': generator didn't stop after throw()
+2024-11-12 08:54:49,161:ERROR:Failed to migrate data for table 'tbl_responsedata' to PostgreSQL: relation "tbl_responsedata" does not exist
+LINE 2:                     INSERT INTO "tbl_responsedata" ("respons...
+                                        ^
+
+2024-11-12 08:54:49,163:ERROR:PostgreSQL connection attempt 1 failed: relation "tbl_responsedata" does not exist
+LINE 2:                     INSERT INTO "tbl_responsedata" ("respons...
+                                        ^
+
+2024-11-12 08:54:49,165:INFO:Backoff delay: 2.39 seconds on attempt 2
+2024-11-12 08:54:51,558:INFO:PostgreSQL connection closed.
+2024-11-12 08:54:51,558:INFO:Connecting to PostgreSQL (Attempt 2)...
+2024-11-12 08:54:51,589:INFO:PostgreSQL connection established.
+2024-11-12 08:54:51,590:INFO:PostgreSQL connection closed.
+2024-11-12 08:54:51,593:ERROR:Migration failed for table 'tbl_responsedata': generator didn't stop after throw()

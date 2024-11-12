@@ -1,5 +1,3 @@
-# database_connections.py
-
 import mysql.connector
 import psycopg2
 from psycopg2 import sql
@@ -19,27 +17,29 @@ def connect_mysql(config=None, retries=3):
     :yield: MySQL connection object.
     """
     if not config:
-        config = get_database_config('MySQL')  # Load MySQL config from environment
+        config = get_database_config('MySQL')  # Load MySQL config from environment if not provided
 
     attempt = 0
     connection = None
     while attempt < retries:
         try:
-            logging.info(f"Connecting to MySQL (Attempt {attempt + 1})...")
+            logging.info(f"Attempting MySQL connection (Attempt {attempt + 1})...")
             connection = mysql.connector.connect(**config)
             if connection.is_connected():
                 logging.info("MySQL connection established.")
                 yield connection
-                return
+                return  # Exit after successful connection
         except mysql.connector.Error as e:
             logging.error(f"MySQL connection attempt {attempt + 1} failed: {e}")
             attempt += 1
             if attempt < retries:
-                exponential_backoff(attempt)
+                logging.info(f"Retrying MySQL connection in {exponential_backoff(attempt):.2f} seconds...")
         finally:
             if connection and connection.is_connected():
                 connection.close()
                 logging.info("MySQL connection closed.")
+            else:
+                logging.info("No MySQL connection to close.")
 
 # PostgreSQL Connection with Retry Logic
 @contextmanager
@@ -52,26 +52,28 @@ def connect_postgresql(config=None, retries=3):
     :yield: PostgreSQL connection object.
     """
     if not config:
-        config = get_database_config('PostgreSQL')  # Load PostgreSQL config from environment
+        config = get_database_config('PostgreSQL')  # Load PostgreSQL config from environment if not provided
 
     attempt = 0
     connection = None
     while attempt < retries:
         try:
-            logging.info(f"Connecting to PostgreSQL (Attempt {attempt + 1})...")
+            logging.info(f"Attempting PostgreSQL connection (Attempt {attempt + 1})...")
             connection = psycopg2.connect(**config)
             logging.info("PostgreSQL connection established.")
             yield connection
-            return
+            return  # Exit after successful connection
         except psycopg2.Error as e:
             logging.error(f"PostgreSQL connection attempt {attempt + 1} failed: {e}")
             attempt += 1
             if attempt < retries:
-                exponential_backoff(attempt)
+                logging.info(f"Retrying PostgreSQL connection in {exponential_backoff(attempt):.2f} seconds...")
         finally:
             if connection:
                 connection.close()
                 logging.info("PostgreSQL connection closed.")
+            else:
+                logging.info("No PostgreSQL connection to close.")
 
 # Check if a table exists in PostgreSQL
 def check_table_exists(pg_conn, table_name, schema_name='public'):
@@ -145,3 +147,43 @@ def map_mysql_type_to_postgresql(mysql_type):
     mapped_type = type_mappings.get(mysql_type.lower(), 'TEXT')
     logging.debug(f"Mapping MySQL type '{mysql_type}' to PostgreSQL type '{mapped_type}'")
     return mapped_type
+
+# Function to add a missing column to a PostgreSQL table
+def add_column_to_postgresql(pg_conn, table_name, column_name, column_type, is_nullable=True, default_value=None, schema_name='public'):
+    """
+    Adds a missing column to a specified PostgreSQL table.
+
+    :param pg_conn: PostgreSQL connection object.
+    :param table_name: Name of the PostgreSQL table.
+    :param column_name: Name of the column to add.
+    :param column_type: Data type of the column (mapped from MySQL to PostgreSQL).
+    :param is_nullable: Boolean indicating if the column can be NULL.
+    :param default_value: Default value for the column.
+    :param schema_name: Schema name where the table resides.
+    """
+    try:
+        nullable_str = "NULL" if is_nullable else "NOT NULL"
+        default_str = f"DEFAULT {default_value}" if default_value is not None else ""
+        
+        add_column_sql = f'''
+            ALTER TABLE "{schema_name}"."{table_name}"
+            ADD COLUMN "{column_name}" {column_type} {nullable_str} {default_str};
+        '''
+        
+        with pg_conn.cursor() as cur:
+            cur.execute(add_column_sql)
+            pg_conn.commit()
+            logging.info(f"Column '{column_name}' added to table '{table_name}' in schema '{schema_name}'.")
+    
+    except psycopg2.Error as e:
+        logging.error(f"Error adding column '{column_name}' to table '{table_name}': {e}")
+        pg_conn.rollback()
+        raise
+
+def ensure_table_exists(pg_conn, pg_table, mysql_conn, mysql_table):
+    if not check_table_exists(pg_conn, pg_table):
+        with mysql_conn.cursor(dictionary=True) as mysql_cur:
+            mysql_cur.execute(f"SHOW COLUMNS FROM {mysql_table}")
+            columns = [(col['Field'], col['Type'], col['Null'] == 'YES', col['Default']) for col in mysql_cur.fetchall()]
+            create_postgresql_table(pg_conn, pg_table, columns)
+        logging.info(f"Table '{pg_table}' created in PostgreSQL.")

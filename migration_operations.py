@@ -1,10 +1,8 @@
-# migration_operations.py
-
 import logging
 from datetime import datetime
+import psycopg2
 from psycopg2 import sql
 import psycopg2.extras
-
 from database_connections import check_table_exists, create_postgresql_table, map_mysql_type_to_postgresql
 
 # Merge and Update Data from MySQL to PostgreSQL
@@ -33,24 +31,30 @@ def merge_and_update_data(mysql_conn, pg_conn, mysql_table, pg_table, unique_col
             for i in range(0, len(rows), batch_size):
                 batch = rows[i:i + batch_size]
                 
-                # Extract column names
+                # Extract column names from the first row in the batch
                 columns = list(batch[0].keys())
-                columns.append("insert_date")
+                columns.append("insert_date")  # Add an additional column for the insertion timestamp
+
+                # Prepare upsert conflict action if unique columns are provided
+                if unique_cols:
+                    conflict_action = sql.SQL("ON CONFLICT ({conflict_cols}) DO UPDATE SET {update_cols}").format(
+                        conflict_cols=sql.SQL(', ').join(map(sql.Identifier, unique_cols)),
+                        update_cols=sql.SQL(', ').join(sql.Identifier(col) + sql.SQL(" = EXCLUDED.") + sql.Identifier(col) for col in columns)
+                    )
+                else:
+                    conflict_action = sql.SQL("")  # No conflict action if there are no unique columns
 
                 # Prepare the PostgreSQL upsert query
                 insert_query = sql.SQL("""
                     INSERT INTO {table} ({fields}) VALUES %s
-                    ON CONFLICT ({conflict_cols}) DO UPDATE SET {update_cols}
+                    {conflict_action}
                 """).format(
                     table=sql.Identifier(pg_table),
                     fields=sql.SQL(', ').join(map(sql.Identifier, columns)),
-                    conflict_cols=sql.SQL(', ').join(map(sql.Identifier, unique_cols)),
-                    update_cols=sql.SQL(', ').join(
-                        sql.SQL(f"{col} = EXCLUDED.{col}") for col in columns
-                    )
+                    conflict_action=conflict_action
                 )
 
-                # Add insert date for each row
+                # Add insert date for each row in the batch
                 values = [tuple(row.values()) + (datetime.now(),) for row in batch]
 
                 # Execute batch upsert

@@ -1,14 +1,15 @@
-# config.py
-
 import os
 import logging
 from logging.handlers import RotatingFileHandler
 from dotenv import load_dotenv
 
+LOG_FILE_PATH = 'migration_log.txt'
+
 # Load environment variables from a .env file, if available
 def load_env_variables(env_file=".env"):
     """
     Loads environment variables from a .env file into the application environment.
+    Checks for missing critical variables and logs warnings for better debugging.
 
     :param env_file: Path to the .env file (default is ".env").
     """
@@ -17,6 +18,17 @@ def load_env_variables(env_file=".env"):
         logging.info(f"Loaded environment variables from '{env_file}'")
     else:
         logging.warning(f"'{env_file}' file not found. Using system environment variables.")
+
+    required_vars = [
+        'MSDB_HOST', 'MSDB_USERNAME', 'MSDB_PASSWORD', 'MSDB_NAME', 'MSDB_PORT',
+        'PGDB_HOST', 'PGDB_USERNAME', 'PGDB_PASSWORD', 'PGDB_NAME', 'PGDB_PORT',
+        'MAIL_SERVER', 'MAIL_USERNAME', 'MAIL_PASSWORD'
+    ]
+    
+    # Check for missing environment variables
+    missing_vars = [var for var in required_vars if not os.getenv(var)]
+    if missing_vars:
+        logging.warning(f"Missing environment variables: {', '.join(missing_vars)}. Check your .env file or system variables.")
 
 # Retrieve database configurations for MySQL and PostgreSQL
 def get_database_config(db_type):

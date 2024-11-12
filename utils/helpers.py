@@ -1,6 +1,3 @@
-# Helper functions for formatting, data parsing, etc.
-# helpers.py
-
 import logging
 import random
 import time
@@ -20,7 +17,6 @@ def map_mysql_to_postgres_type(mysql_type):
     logging.debug(f"Mapping MySQL type '{mysql_type}' to PostgreSQL type '{pg_type}'")
     return pg_type
 
-
 # Exponential Backoff with Optional Jitter
 def exponential_backoff(attempt, base=RETRY_BACKOFF_BASE, max_delay=RETRY_MAX_DELAY, jitter=RETRY_JITTER_ENABLED):
     """
@@ -39,7 +35,6 @@ def exponential_backoff(attempt, base=RETRY_BACKOFF_BASE, max_delay=RETRY_MAX_DE
     time.sleep(delay)
     return delay
 
-
 # Timestamp Formatter
 def format_timestamp(dt=None):
     """
@@ -52,7 +47,6 @@ def format_timestamp(dt=None):
     formatted_timestamp = dt.strftime('%Y-%m-%d %H:%M:%S')
     logging.debug(f"Formatted timestamp: {formatted_timestamp}")
     return formatted_timestamp
-
 
 # Validate Email Format
 def validate_email(email):
@@ -68,7 +62,6 @@ def validate_email(email):
     logging.debug(f"Validating email '{email}': {'Valid' if is_valid else 'Invalid'}")
     return is_valid
 
-
 # Format Error Messages for User Display
 def format_error_message(error, details=None):
     """
@@ -83,7 +76,6 @@ def format_error_message(error, details=None):
         message += f"\nDetails: {details}"
     logging.debug(f"Formatted error message: {message}")
     return message
-
 
 # Retry Operation Wrapper with Backoff
 def retry_operation(operation, max_attempts=3, *args, **kwargs):
@@ -108,3 +100,32 @@ def retry_operation(operation, max_attempts=3, *args, **kwargs):
             else:
                 logging.error(f"Operation '{operation.__name__}' failed after {max_attempts} attempts.")
                 raise
+
+# Schema Comparison Helper
+def compare_mysql_pg_schemas(mysql_columns, pg_columns):
+    """
+    Compares MySQL and PostgreSQL schemas to identify differences.
+
+    :param mysql_columns: List of MySQL columns (name, type).
+    :param pg_columns: List of PostgreSQL columns (name, type).
+    :return: Dictionary detailing missing columns and mismatched types.
+    """
+    mysql_column_dict = {col['name']: col['type'] for col in mysql_columns}
+    pg_column_dict = {col['name']: col['type'] for col in pg_columns}
+
+    missing_in_pg = []
+    type_mismatches = []
+
+    for col_name, col_type in mysql_column_dict.items():
+        if col_name not in pg_column_dict:
+            missing_in_pg.append(col_name)
+        elif map_mysql_to_postgres_type(col_type) != pg_column_dict[col_name]:
+            type_mismatches.append((col_name, col_type, pg_column_dict[col_name]))
+
+    if missing_in_pg:
+        logging.info(f"Columns missing in PostgreSQL: {missing_in_pg}")
+    if type_mismatches:
+        for mismatch in type_mismatches:
+            logging.info(f"Type mismatch for column '{mismatch[0]}': MySQL({mismatch[1]}) != PostgreSQL({mismatch[2]})")
+
+    return {'missing_columns': missing_in_pg, 'type_mismatches': type_mismatches}
