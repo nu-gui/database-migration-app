@@ -42,6 +42,9 @@ for repo in $REPOS; do
   # Make scripts executable
   chmod +x maintenance-scripts/*.sh
   
+  # Run the fix_references.sh script to update references to renamed files
+  ./maintenance-scripts/fix_references.sh .
+  
   # Add and commit changes
   git add maintenance-scripts/ .github/workflows/ .pre-commit-config.yaml
   git commit -m "Add repository maintenance scripts and GitHub Actions workflows"

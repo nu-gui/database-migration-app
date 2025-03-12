@@ -1,54 +1,49 @@
 #!/bin/bash
+
 # Script to standardize file and folder names in a repository
-# Usage: ./standardize_filenames.sh /path/to/repository
+# - Converts all file and folder names to lowercase
+# - Removes spaces in filenames (using underscores or hyphens instead)
+# - Updates references to renamed files in code and documentation
 
 set -e
 
-REPO_PATH=$1
 RENAME_LOG="RENAME_LOG.md"
 
-if [ -z "$REPO_PATH" ]; then
-  echo "Usage: $0 /path/to/repository"
-  exit 1
+# Initialize rename log
+if [ ! -f "$RENAME_LOG" ]; then
+  cat > "$RENAME_LOG" << 'EOL'
+# File and Folder Rename Log
+
+This document tracks all file and folder renames performed during repository maintenance.
+
+## Renamed Files and Folders
+
+| Original Path | New Path | Affected Files | Actions Taken | 
+|---------------|----------|----------------|--------------|
+EOL
 fi
 
-if [ ! -d "$REPO_PATH" ]; then
-  echo "Error: $REPO_PATH is not a valid directory"
-  exit 1
-fi
-
-cd "$REPO_PATH"
-
-# Create or initialize RENAME_LOG.md
-echo "# File and Folder Rename Log" > "$RENAME_LOG"
-echo "" >> "$RENAME_LOG"
-echo "This document tracks all file and folder renames performed during repository maintenance." >> "$RENAME_LOG"
-echo "" >> "$RENAME_LOG"
-echo "## Renamed Files and Folders" >> "$RENAME_LOG"
-echo "" >> "$RENAME_LOG"
-echo "| Old Name | New Name | Affected Files | Steps Taken |" >> "$RENAME_LOG"
-echo "|----------|----------|----------------|-------------|" >> "$RENAME_LOG"
-
-# Function to convert a filename to lowercase and replace spaces with underscores
+# Function to standardize a name
 standardize_name() {
-  local old_name="$1"
-  local new_name=$(echo "$old_name" | tr '[:upper:]' '[:lower:]' | tr ' ' '_')
-  echo "$new_name"
+  local name="$1"
+  # Convert to lowercase and replace spaces with underscores
+  echo "$name" | tr '[:upper:]' '[:lower:]' | tr ' ' '_'
 }
 
-# Function to find all references to a file or folder
+# Function to find references to a file or folder
 find_references() {
-  local old_name="$1"
-  local escaped_name=$(echo "$old_name" | sed 's/[\/&]/\\&/g')
-  grep -r --include="*.*" "$escaped_name" . 2>/dev/null || echo "No references found"
+  local name="$1"
+  local escaped=$(echo "$name" | sed 's/[\/&]/\\&/g')
+  grep -l -r --include="*.*" "$escaped" . 2>/dev/null || true
 }
 
-# Function to update references in files
+# Function to update references to renamed files
 update_references() {
   local old_name="$1"
   local new_name="$2"
   local escaped_old=$(echo "$old_name" | sed 's/[\/&]/\\&/g')
   local escaped_new=$(echo "$new_name" | sed 's/[\/&]/\\&/g')
+  local affected_files=""
   
   # Find files containing references to the old name
   grep -l -r --include="*.*" "$escaped_old" . 2>/dev/null | while read -r file; do
@@ -65,7 +60,76 @@ update_references() {
     # Update references
     sed -i "s/$escaped_old/$escaped_new/g" "$file"
     echo "Updated references in $file"
+    affected_files="$affected_files $file"
   done
+  
+  # Special handling for Python imports if the file is a Python file
+  if [[ "$old_name" == *.py ]]; then
+    # Extract module name without extension
+    local old_module=$(basename "$old_name" .py)
+    local new_module=$(basename "$new_name" .py)
+    
+    if [ "$old_module" != "$new_module" ]; then
+      local escaped_old_module=$(echo "$old_module" | sed 's/[\/&]/\\&/g')
+      local escaped_new_module=$(echo "$new_module" | sed 's/[\/&]/\\&/g')
+      
+      # Find Python files with import statements referencing the old module
+      grep -l -r --include="*.py" "import.*$escaped_old_module\|from.*$escaped_old_module" . 2>/dev/null | while read -r pyfile; do
+        # Skip the RENAME_LOG.md file itself
+        if [[ "$pyfile" == *"$RENAME_LOG"* ]]; then
+          continue
+        fi
+        
+        # Update import statements
+        sed -i "s/import $escaped_old_module/import $escaped_new_module/g" "$pyfile"
+        sed -i "s/from $escaped_old_module/from $escaped_new_module/g" "$pyfile"
+        sed -i "s/import $escaped_old_module as/import $escaped_new_module as/g" "$pyfile"
+        echo "Updated Python imports in $pyfile"
+        affected_files="$affected_files $pyfile"
+      done
+    fi
+  fi
+  
+  # Special handling for JavaScript/TypeScript imports
+  if [[ "$old_name" == *.js || "$old_name" == *.ts || "$old_name" == *.jsx || "$old_name" == *.tsx ]]; then
+    # Extract module name without extension
+    local old_module=$(basename "$old_name" | sed 's/\.[^.]*$//')
+    local new_module=$(basename "$new_name" | sed 's/\.[^.]*$//')
+    
+    if [ "$old_module" != "$new_module" ]; then
+      local escaped_old_module=$(echo "$old_module" | sed 's/[\/&]/\\&/g')
+      local escaped_new_module=$(echo "$new_module" | sed 's/[\/&]/\\&/g')
+      
+      # Find JS/TS files with import statements referencing the old module
+      grep -l -r --include="*.js" --include="*.ts" --include="*.jsx" --include="*.tsx" "import.*$escaped_old_module\|require.*$escaped_old_module" . 2>/dev/null | while read -r jsfile; do
+        # Skip the RENAME_LOG.md file itself
+        if [[ "$jsfile" == *"$RENAME_LOG"* ]]; then
+          continue
+        fi
+        
+        # Update import statements - more specific patterns
+        sed -i "s/import.*from ['\"].*\/$escaped_old_module['\"].*\|import.*from ['\"]$escaped_old_module['\"].*\|import ['\"].*\/$escaped_old_module['\"].*\|import ['\"]$escaped_old_module['\"].*/import from '\/$escaped_new_module'/g" "$jsfile"
+        sed -i "s/require(['\"].*\/$escaped_old_module['\"])\|require(['\"]$escaped_old_module['\"])/require('\/$escaped_new_module')/g" "$jsfile"
+        echo "Updated JS/TS imports in $jsfile"
+        affected_files="$affected_files $jsfile"
+      done
+    fi
+  fi
+  
+  # Special handling for configuration files
+  grep -l -r --include="*.json" --include="*.yaml" --include="*.yml" --include="*.xml" --include="*.toml" "$escaped_old" . 2>/dev/null | while read -r configfile; do
+    # Skip the RENAME_LOG.md file itself
+    if [[ "$configfile" == *"$RENAME_LOG"* ]]; then
+      continue
+    fi
+    
+    # Update path references
+    sed -i "s/$escaped_old/$escaped_new/g" "$configfile"
+    echo "Updated config references in $configfile"
+    affected_files="$affected_files $configfile"
+  done
+  
+  echo "$affected_files"
 }
 
 # Process files and directories
@@ -96,7 +160,7 @@ find . -type f -o -type d | grep -v "\.git" | sort -r | while read -r item; do
       echo "Renamed: $old_path -> $new_path"
       
       # Update references
-      update_references "$basename" "$new_basename"
+      affected_files=$(update_references "$basename" "$new_basename")
       
       # Log the rename
       echo "| \`$old_path\` | \`$new_path\` | $(echo "$affected_files" | tr '\n' ' ' | sed 's/ /, /g') | References updated via sed | " >> "$RENAME_LOG"
